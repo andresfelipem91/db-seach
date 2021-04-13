@@ -99,7 +99,7 @@ $host="localhost";
 
   $cnx=new PDO("mysql:host=$host;dbname=$dbname",$username,$password);
    //construir sql sentence
-    $sql="SELECT a.id,p.name as producto_name,m.id,m.name as marca_name,t.name as atributo_name,a.descuento FROM producto as p JOIN allocation a ON p.id=a.id_producto JOIN marca m ON a.id_marca=m.id JOIN atributos t ON a.id_atributo=t.id $where ORDER BY p.name ASC";
+    $sql="SELECT a.id,p.name as producto_name,m.id,m.name as marca_name,t.id,t.name as atributo_name,a.descuento FROM producto as p JOIN allocation a ON p.id=a.id_producto JOIN marca m ON a.id_marca=m.id JOIN atributos t ON a.id_atributo=t.id $where ORDER BY p.name ASC";
    var_dump($sql);
   //preparar  Sql sentence
     $q=$cnx->prepare($sql);
@@ -211,17 +211,22 @@ $sql="select id,name from producto";
       <br>
     <?php
      
+   
      for($i=0;$i<count($atributo);$i++){
       ?> 
       
+      <input type="radio" value="<?php echo $atributo[$i]['id'] ?> " name="atributo" <?php if($atributo[$i]['id'] == $atributo ) echo "checked" ?> ><?php echo $atributo[$i]['name'] ?>
+      
        
-      <input type="radio" value="<?php echo $atributo[$i]["id"]?>" name="atributo" class="radio" ><?php echo $atributo[$i]["name"]?> 
+       
+       
+      <!--<input type="radio" value="<?php //echo $atributo[$i]["id"]?>" name="atributo" class="radio"   ><?php //echo $atributo[$i]["name"]?>--> 
     
     
     <?php
      }
     
-    ?><br>
+    ?> <br>
   
      
      <?php

@@ -197,14 +197,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        
 
       <br>
-    <?php 
-    //if($_SERVER["REQUEST_METHOD"] == "POST"){
-     //$price= $_REQUEST['price'];?>
+      <?php if(isset($price)){ ?>
+<input type="radio" value="1500000" name="price"  class="radio" <?php if($price == "1500000") echo "checked" ?> >1500000 
+    <input type="radio" value="2000000" name="price" class="radio" <?php if($price == "2000000") echo "checked" ?>>2000000
+    <input type="radio" value="3000000" name="price" class="radio" <?php if($price == "3000000") echo "checked" ?>>3000000
+    <input type="radio" value="6000000" name="price" class="radio" <?php if($price == "6000000") echo "checked" ?>>6000000 
+    <input type="radio" value="60000" name="price" class="radio" <?php if($price == "60000") echo "checked" ?>>60000
+    <input type="radio" value="900000000" name="price" class="radio" <?php if($price == "900000000") echo "checked" ?>>900000000
+    <input type="radio" value="12232343" name="price" class="radio" <?php if($price == "12232343") echo "checked" ?>>12232343
+    <input type="radio" value="500000" name="price" class="radio" <?php if($price == "500000") echo "checked" ?>>500000<br> 
+      <?php }else{?>
+      <input type="radio" value="1500000" name="price" class="radio" >1500000
+     <input type="radio" value="2000000" name="price" class="radio">2000000
+     <input type="radio" value="3000000" name="price" class="radio">3000000
+     <input type="radio" value="6000000 " name="price" class="radio">6000000 
+     <input type="radio" value="60000" name="price" class="radio">60000
+     <input type="radio" value="900000000" name="price" class="radio">900000000
+     <input type="radio" value="12232343" name="price" class="radio">12232343
+     <input type="radio" value="500000" name="price" class="radio">500000<br>
+      
+      <?php } ?>
+      
+     <?php //} else {?>
+     <!--<input type="radio" value="1500000" name="price"  class="radio"  >1500000
+    <input type="radio" value="2000000" name="price" class="radio">2000000
+    <input type="radio" value="3000000" name="price" class="radio">3000000
+    <input type="radio" value="6000000 " name="price" class="radio">6000000 
+    <input type="radio" value="60000" name="price" class="radio">60000
+    <input type="radio" value="900000000" name="price" class="radio">900000000
+    <input type="radio" value="12232343" name="price" class="radio">12232343
+    <input type="radio" value="500000" name="price" class="radio">500000<br>-->
+     <?php //} ?>
+    
+    
+  <?php //}
+  //if($_SERVER["REQUEST_METHOD"] == "POST"){
+  // $price=$_REQUEST['price'];
+     ?>
+     
      <?php //$arr_precio=array($price); 
     //for ($i=0; $i < count($arr_precio) ; $i++) { 
      //if($price == $arr_precio[$i]){?>
-    <!--<input type="radio" value="<?php //if($arr_precio[$i]==1500000){echo $arr_precio[$i]; }else{echo "1500000";} ?>" <?php //if($arr_precio[$i]==1500000){?>checked<?php //} ?> name="price" class="radio" ><?php //if($arr_precio[$i]==1500000){echo $arr_precio[$i]; }else{echo "1500000";} ?>
-    <input type="radio" value="<?php //if($arr_precio[$i]==2000000){echo $arr_precio[$i]; }else{echo "2000000";} ?>"<?php //if($arr_precio[$i]==2000000){?>checked<?php //} ?> name="price" class="radio"><?php //if($arr_precio[$i]==2000000){echo $arr_precio[$i];  }else{echo "2000000";} ?>
+     <!--<input type="radio" value="<?php //if($arr_precio[$i]==1500000){echo $arr_precio[$i]; }else{echo "1500000";} ?>" <?php //if($arr_precio[$i]==1500000){?>checked<?php //} ?> name="price" class="radio" ><?php //if($arr_precio[$i]==1500000){echo $arr_precio[$i]; }else{echo "1500000";} ?>
+   <input type="radio" value="<?php //if($arr_precio[$i]==2000000){echo $arr_precio[$i]; }else{echo "2000000";} ?>"<?php //if($arr_precio[$i]==2000000){?>checked<?php //} ?> name="price" class="radio"><?php //if($arr_precio[$i]==2000000){echo $arr_precio[$i];  }else{echo "2000000";} ?>
     <input type="radio" value="<?php //if($arr_precio[$i]==3000000){echo $arr_precio[$i]; }else{echo "3000000";} ?>"<?php //if($arr_precio[$i]==3000000){?>checked<?php //} ?> name="price" class="radio"><?php //if($arr_precio[$i]==3000000){echo $arr_precio[$i];  }else{echo "3000000";} ?>
     <input type="radio" value="<?php //if($arr_precio[$i]==6000000 ){echo $arr_precio[$i]; }else{echo "6000000 ";} ?>"<?php //if($arr_precio[$i]==6000000 ){?>checked<?php //} ?> name="price" class="radio"><?php //if($arr_precio[$i]==6000000 ){echo $arr_precio[$i];  }else{echo "6000000 ";} ?>
     <input type="radio" value="<?php //if($arr_precio[$i]==60000 ){echo $arr_precio[$i]; }else{echo "60000 ";} ?>"<?php //if($arr_precio[$i]==60000 ){?>checked<?php //} ?> name="price" class="radio"><?php //if($arr_precio[$i]==60000 ){echo $arr_precio[$i];  }else{echo "60000 ";} ?>
@@ -216,14 +251,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
 <?php //} ?>
      <?php //}else { ?>
-     <input type="radio" value="1500000" name="price" class="radio" >1500000
+    
+      <?php //if ($_REQUEST["price"] == "") {
+  // collect value of input field
+  //$price = $_REQUEST['price'];?>
+  
+  <?php //if($price == 1500000){?>
+    <!--<input type="radio" value="<?php //echo $price ?>" name="price" class="radio" checked><?php //echo $price ?>
+    <input type="radio" value="2000000" name="price" class="radio">2000000
+    <input type="radio" value="3000000" name="price" class="radio">3000000
+    <input type="radio" value="6000000 " name="price" class="radio">6000000 
+    <input type="radio" value="60000" name="price" class="radio">60000
+    <input type="radio" value="900000000" name="price" class="radio">900000000
+    <input type="radio" value="12232343" name="price" class="radio">12232343
+    <input type="radio" value="500000" name="price" class="radio">500000 <br>-->
+  <?php //} ?>
+  <?php //}else{?>
+    <!-- <input type="radio" value="1500000" name="price" class="radio" >1500000
      <input type="radio" value="2000000" name="price" class="radio">2000000
      <input type="radio" value="3000000" name="price" class="radio">3000000
      <input type="radio" value="6000000 " name="price" class="radio">6000000 
      <input type="radio" value="60000" name="price" class="radio">60000
      <input type="radio" value="900000000" name="price" class="radio">900000000
      <input type="radio" value="12232343" name="price" class="radio">12232343
-     <input type="radio" value="500000" name="price" class="radio">500000<br>
+     <input type="radio" value="500000" name="price" class="radio">500000<br>-->
      <?php //}?>
     <br>
     
